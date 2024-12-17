@@ -1,0 +1,292 @@
+{% extends 'job_portal/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'job_portal/profile1.css' %}">
+    <title>Personal Details Form</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ECF8F1;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem 3rem;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Heading */
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Label and Input Styling */
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 0.7rem;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease-in-out;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #38A3A5;
+            box-shadow: 0 0 5px rgba(56, 163, 165, 0.5);
+        }
+
+        /* Button Styling */
+        button {
+            width: 100%;
+            padding: 1.2rem;
+            background-color: #192A51;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #967AA1;
+        }
+
+        /* OTP Section */
+        .otp-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .otp-container input {
+            width: 48%;
+        }
+
+        /* Input Focus and Button Hover */
+        input:focus + label {
+            color: #2575fc;
+            font-size: 0.9rem;
+            transform: translateY(-10px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+
+            .otp-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-container" id="personalForm">
+        <h2>Personal Details</h2>
+        <form>
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+
+            <!-- OTP Section -->
+            <div class="form-group otp-container">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+                <button type="button" onclick="sendOtp()">Send OTP</button>
+            </div>
+
+            <!-- OTP Verification Button -->
+            <div class="form-group">
+                <button type="button" onclick="verifyOtp()">Verify OTP</button>
+            </div>
+
+            <!-- Next Button -->
+            <div class="form-group">
+                <button type="button" onclick="goToOrganizationForm()">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-container" id="organizationForm" style="display: none;">
+        <h2>Organization Details</h2>
+        <form>
+            <!-- Organization Name -->
+            <div class="form-group">
+                <label for="orgName">Organization Name:</label>
+                <input type="text" id="orgName" name="orgName" placeholder="Enter your organization name" required>
+            </div>
+
+            <!-- Organization Description -->
+            <div class="form-group">
+                <label for="orgDescription">Organization Description:</label>
+                <textarea id="orgDescription" name="orgDescription" placeholder="Enter your organization description" required></textarea>
+            </div>
+
+            <!-- Industry -->
+            <div class="form-group">
+                <label for="industry">Industry:</label>
+                <input type="text" id="industry" name="industry" placeholder="Enter your organization's industry" required>
+            </div>
+
+            <!-- City -->
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
+
+            <!-- Number of Employees -->
+            <div class="form-group">
+                <label for="numEmployees">Number of Employees:</label>
+                <input type="number" id="numEmployees" name="numEmployees" placeholder="Enter number of employees" required>
+            </div>
+
+            <!-- Organization Email -->
+            <div class="form-group">
+                <label for="orgEmail">Organization Email:</label>
+                <input type="email" id="orgEmail" name="orgEmail" placeholder="Enter your organization email" required>
+            </div>
+
+            <!-- Organization Phone -->
+            <div class="form-group">
+                <label for="orgPhone">Organization Phone:</label>
+                <input type="tel" id="orgPhone" name="orgPhone" placeholder="Enter your organization phone" required>
+            </div>
+
+            <!-- Industry Type -->
+            <div class="form-group">
+                <label for="industryType">Industry Type:</label>
+                <select id="industryType" name="industryType" required>
+                    <option value="">--Select Industry Type--</option>
+                    <option value="IT">IT</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Education">Education</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <!-- Organization URL -->
+            <div class="form-group">
+                <label for="orgURL">Organization URL:</label>
+                <input type="url" id="orgURL" name="orgURL" placeholder="Enter your organization URL" required>
+            </div>
+
+            <!-- Upload Organization Logo -->
+            <div class="form-group file-input">
+                <label for="orgLogo">Upload Organization Logo:</label>
+                <input type="file" id="orgLogo" name="orgLogo" accept="image/*" required>
+            </div>
+
+            <!-- Upload Business Registration Document -->
+            <div class="form-group file-input">
+                <label for="regDoc">Business Registration Document:</label>
+                <input type="file" id="regDoc" name="regDoc" accept="application/pdf" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="button" onclick="submitForm()">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Example JavaScript functions for OTP functionality
+        function sendOtp() {
+            const mobile = document.getElementById('mobile').value;
+            if (mobile) {
+                alert('OTP sent to ' + mobile);
+            } else {
+                alert('Please enter a valid mobile number');
+            }
+        }
+
+        function verifyOtp() {
+            const otp = document.getElementById('otp').value;
+            if (otp) {
+                alert('OTP Verified');
+            } else {
+                alert('Please enter the OTP');
+            }
+        }
+
+        // Function to switch to the organization form
+        function goToOrganizationForm() {
+            const personalForm = document.getElementById('personalForm');
+            const organizationForm = document.getElementById('organizationForm');
+            
+            personalForm.style.display = 'none';  // Hide the personal form
+            organizationForm.style.display = 'block';  // Show the organization form
+        }
+    </script>
+
+</body>
+{% endblock content %}

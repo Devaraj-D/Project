@@ -1,0 +1,42 @@
+/* Example CSS to reduce space between form fields */
+.form-group {
+    margin-bottom: 10px; /* Reduced margin between form fields */
+}
+
+input, select, textarea {
+    margin-bottom: 10px; /* Reduced space between inputs */
+    padding: 8px;
+    width: 100%; /* Ensures full width */
+}
+
+button {
+    margin-top: 20px; /* More space between fields and button */
+}
+
+.alert {
+    margin-bottom: 20px; /* Space after error message */
+}
+
+/* Style for the profile container */
+.profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="password"] {
+    width: 100%; /* Makes the input take up the full width of its container */
+    padding: 10px; /* Adds consistent padding */
+    font-size: 16px; /* Matches the font size of other inputs */
+    border: 1px solid #ccc; /* Matches the border style */
+    border-radius: 4px; /* Adds rounded corners */
+    box-sizing: border-box; /* Includes padding in the width calculation */
+}

@@ -1,0 +1,247 @@
+/* General body and layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container for the signup and application form */
+.signup-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header section */
+.header-wrapper {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.login-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}
+
+/* Application form container */
+.application-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.application-card {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.header-section .header-content {
+  text-align: center;
+}
+
+.job-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.applicant-name {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.divider-wrapper {
+  margin: 20px 0;
+}
+
+.divider {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Form fields */
+.application-form {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+}
+
+.question-label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.radio-option {
+  margin-bottom: 15px;
+}
+
+.radio-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.select-wrapper {
+  margin-top: 10px;
+  position: relative;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+}
+
+.custom-resume-section {
+  margin-top: 30px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.upload-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.upload-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+}
+
+.upload-text {
+  font-size: 14px;
+  color: #555;
+  margin-left: 10px;
+}
+
+.upload-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.file-requirements {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Error messages */
+.error-list {
+  color: #ff4d4d;
+  font-size: 14px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.error-list li {
+  margin-bottom: 5px;
+}

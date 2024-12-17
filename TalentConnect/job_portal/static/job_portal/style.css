@@ -1,0 +1,378 @@
+
+
+/*.internships-container {
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-heading {
+  color: var(--internshala-com-mine-shaft, #333);
+  margin-left: 21px;
+  font: var(--font-weight-700, 700) var(--font-size-28, 28px) / var(--line-height-36, 36px) var(--font-family-Font-1, Inter);
+  text-align:center;
+  align-items:center;
+}
+
+.categories-wrapper {
+  display: flex;
+  margin-top: 22px;
+  width: 100%;
+  max-width: 1076px;
+  gap: 26px;
+  color: var(--internshala-com-tundora, #484848);
+  flex-wrap: wrap;
+  font: var(--font-weight-500, 500) var(--font-size-14, 14px) var(--font-family-Font-1, Inter);
+  text-align:center;
+}
+
+.categories-label {
+  line-height: var(--line-height-20, 20px);
+  letter-spacing: var(--stroke-weight-1, 1px);
+  text-transform: uppercase;
+  flex-grow: 1;
+  margin: auto 0;
+}
+
+.categories-list {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  line-height: var(--line-height-16, 16px);
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-basis: auto;
+  margin-left:20px;
+}
+
+.category-tag {
+  border-radius: 99px;
+  padding: 8px 16px;
+  border: 1px solid rgba(221, 221, 221, 1);
+}
+
+.category-tag-active {
+  background-color: rgba(0, 139, 220, 1);
+  color: var(--internshala-com-white, #fff);
+}
+
+.category-tag:hover {
+  transform: scale(1.05); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.internships-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.categories a{
+  text-decoration: none;
+  color:black;
+}
+.categories a:hover{
+  color:white;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Add spacing between items */
+  margin-top: 20px;
+}
+
+p {
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-right:35px;
+  
+}
+
+a{
+  text-decoration: none;
+  color:#008bdc
+}
+
+.category-button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 1px solid rgba(221, 221, 221, 1);
+  border-radius: 30px;
+}
+
+.category-button-active{
+  background-color: rgba(0, 139, 220, 1);
+}
+
+.category-button-active a{
+  color:white;
+}
+
+.category-button:hover {
+  transform: scale(1.05); 
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);;
+  background-color:rgba(0, 120, 220, 1)
+}
+
+.internship-cards {
+  align-self: stretch;
+  margin-top: 48px;
+  width: 100%;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+}
+
+.internship-card {
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 24px rgba(136, 166, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-Font-1, Inter);
+  margin: 0 auto;
+  padding: 50px;
+  border: 1px solid rgba(238, 238, 238, 1);
+}
+
+.internship-card:hover {
+    transform: scale(1.05); /* Slightly enlarges the grid item */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+}
+
+.hiring-badge {
+  align-items: center;
+  border-radius: 4px;
+  border: var(--stroke-weight-1, 1px) solid var(--internshala-com-alto, #ddd);
+  align-self: start;
+  display: flex;
+  gap: var(--item-spacing-6, 6px);
+  font-size: var(--font-size-12, 12px);
+  color: var(--internshala-com-tundora, #484848);
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-16, 16px);
+  padding: 4px 8px;
+}
+
+.card-header {
+  border-bottom: var(--stroke-weight-1, 1px) solid var(--color-grey-93, #eee);
+  display: flex;
+  margin-top: 12px;
+  padding-bottom: 16px;
+  align-items: start;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.card-header :hover{
+  color: #666;
+}
+
+.internship-title {
+  color: var(--internshala-com-mine-shaft, #333);
+  font-size: var(--font-size-14, 14px);
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-20, 20px);
+}
+
+.company-name {
+  color: var(--internshala-com-gray, #8a8a8a);
+  font-size: var(--font-size-12, 12px);
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-16, 16px);
+}
+
+.details-list {
+  display: flex;
+  margin-top: 16px;
+  width: 100%;
+  flex-direction: column;
+  font-size: var(--font-size-12, 12px);
+  color: var(--internshala-com-tundora, #484848);
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-18, 18px);
+}
+
+.detail-item {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.detail-item:first-child {
+  margin-top: 0;
+}
+
+.card-footer {
+  display: flex;
+  margin-top: 32px;
+  width: 100%;
+  gap: 20px;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-16, 16px);
+  justify-content: space-between;
+}
+
+.internship-type {
+  border-radius: 4px;
+  background: var(--color-grey-93, #eee);
+  font-size: var(--font-size-12, 12px);
+  color: var(--internshala-com-dove-gray, #666);
+  padding: 2px 6px;
+}
+
+.view-details-link {
+  display: flex;
+  gap: 5px;
+  font-size: var(--font-size-14, 14px);
+  color: var(--internshala-com-lochmara, #008bdc);
+  margin: auto 0;
+  text-decoration: none;
+}
+
+.pagination {
+  display: flex;
+  margin-top: 48px;
+  width: 240px;
+  max-width: 100%;
+  gap: 20px;
+}
+
+.pagination-button {
+  justify-content: center;
+  align-items: center;
+  border-radius: 99px;
+  border: var(--stroke-weight-1, 1px) solid var(--internshala-com-alto, #ddd);
+  background: var(--internshala-com-white, #fff);
+  display: flex;
+  min-height: 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0 8px;
+}
+
+.pagination-indicator {
+  fill: var(--color-grey-93, #eee);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: auto 0;
+}
+
+.pagination-dot {
+  border-radius: 99px;
+  background: var(--internshala-com-lochmara, #008bdc);
+  width: 53px;
+  height: 6px;
+}
+
+/*@media (max-width: 991px) {
+  .section-heading,
+  .internships-container
+  .categories,
+  .categories-wrapper,
+  .internship-cards {
+    max-width: 100%;
+  }
+  
+  .internship-cards {
+    margin-top: 40px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+  
+  .internship-card {
+    margin-top: 24px;
+    padding: 0 20px;
+  }
+  
+  .card-footer {
+    margin-top: 40px;
+  }
+  
+  .pagination {
+    margin-top: 40px;
+  }
+}*/
+
+
+@media (max-width: 768px) {
+  h2 {
+      font-size: 28px;
+  }
+
+
+  .internships-container {
+    width: 95%; /* Adjust container width */
+    padding: 15px;
+  }
+
+  .categories {
+    flex-wrap: wrap;
+    gap: 10px; /* Smaller gap between categories */
+  }
+
+  .category-button{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .category-button {
+      padding: 8px 15px;
+      font-size: 14px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  h2 {
+      font-size: 24px;
+  }
+
+  .category-button {
+      width: 100%; /* Buttons will take full width */
+      padding: 10px;
+      font-size: 16px;
+  }
+
+
+}

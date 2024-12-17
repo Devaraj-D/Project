@@ -1,0 +1,93 @@
+{% extends 'job_portal/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'job_portal/employer.css' %}">
+<div class="profile-container">
+    <h2>Employer Registration</h2>
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>Please correct the errors below:</strong>
+        <ul>
+            {% for field in form %}
+                {% if field.errors %}
+                    <li><strong>{{ field.label }}:</strong> {% for error in field.errors %}{{ error }} {% endfor %}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text" name="company_name" id="company_name" class="form-control" value="{{ form.company_name.value }}" placeholder="Enter your company name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="company_email">Company Email</label>
+            <input type="email" name="company_email" id="company_email" class="form-control" value="{{ form.company_email.value }}" placeholder="Enter your company email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="company_phone">Phone Number</label>
+            <input type="text" name="company_phone" id="company_phone" class="form-control" value="{{ form.company_phone.value }}" placeholder="Enter your company phone number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="industry">Industry</label>
+            <select name="industry" id="industry" class="form-control">
+                {% for choice, label in form.industry.field.choices %}
+                    <option value="{{ choice }}" {% if form.industry.value == choice %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="company_address">Company Address</label>
+            <textarea name="company_address" id="company_address" class="form-control" placeholder="Enter the company address">{{ form.company_address.value }}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="website_url">Website URL</label>
+            <input type="url" name="website_url" id="website_url" class="form-control" value="{{ form.website_url.value }}" placeholder="Enter your company's website URL">
+        </div>
+
+        <div class="form-group">
+            <label for="company_size">Company Size (Number of Employees)</label>
+            <input type="number" name="company_size" id="company_size" class="form-control" value="{{ form.company_size.value }}" placeholder="Enter number of employees" required>
+        </div>
+
+        <div class="form-group">
+            <label for="business_registration_document">Business Registration Document (PDF)</label>
+            <input type="file" name="business_registration_document" id="business_registration_document" class="form-control" accept="application/pdf">
+        </div>
+
+        <div class="form-group">
+            <label for="profile_image">Upload logo</label>
+            <input type="file" name="profile_image" id="profile_image" class="form-control" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="linkedin">LinkedIn URL</label>
+            <input type="url" name="linkedin" id="linkedin" class="form-control" value="{{ form.linkedin.value }}" placeholder="Enter your company's LinkedIn URL">
+        </div>
+
+        <!-- Add Password and Confirm Password Fields -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" class="form-control" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock %}

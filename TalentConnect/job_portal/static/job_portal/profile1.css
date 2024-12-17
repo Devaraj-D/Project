@@ -1,0 +1,163 @@
+/* App.css */
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Profile Container */
+.profile-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Profile Summary */
+.profile-summary {
+  cursor: pointer;
+  padding: 20px 0;
+}
+
+.profile-summary:hover {
+  background-color: #f9f9f9;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4caf50;
+  margin-bottom: 15px;
+}
+
+.profile-summary h2 {
+  font-size: 22px;
+  color: #333;
+  margin: 0;
+}
+
+/* Profile Details */
+.profile-details {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.profile-details h2 {
+  font-size: 20px;
+  color: #4caf50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.profile-section {
+  margin: 15px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: none; /* Hidden by default */
+}
+
+.profile-section.active {
+  display: block; /* Visible when active */
+}
+
+.profile-section p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.profile-section strong {
+  color: #333;
+}
+
+/* Toggle Buttons for Sections */
+.toggle-section-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 5px;
+  transition: background 0.3s;
+}
+
+.toggle-section-btn:hover {
+  background: #45a049;
+}
+
+/* Edit Profile Form */
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.edit-profile-form label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+  text-align: left;
+}
+
+.edit-profile-form input {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-profile-form button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.edit-profile-form button:hover {
+  background: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .profile-container {
+    width: 90%;
+  }
+
+  .profile-summary h2 {
+    font-size: 18px;
+  }
+
+  .profile-details h2 {
+    font-size: 18px;
+  }
+
+  .edit-profile-form button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .toggle-section-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}

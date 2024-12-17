@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .list-group-item {
+            cursor: pointer;
+        }
+
+        .list-group-item:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .container-fluid {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ddd;
+        }
+        .view-details-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        margin-top: auto;
+        align-self: center;
+    }
+
+    .view-details-btn:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TalentConnect</h1>
+    </header>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Vertical Navbar -->
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a id="nav-subscribed-users" class="list-group-item list-group-item-action">Subscribed Users</a>
+                    <a id="nav-users" class="list-group-item list-group-item-action">Users</a>
+                    <a id="nav-companies" class="list-group-item list-group-item-action">Companies</a>
+                    <a id="nav-pending" class="list-group-item list-group-item-action">Pending Requests</a>
+                    <a id="nav-approved" class="list-group-item list-group-item-action">Approved</a>
+                    <a id="nav-rejected" class="list-group-item list-group-item-action">Rejected</a>
+                    <a id="nav-pending-apps" class="list-group-item list-group-item-action">Pending Applications</a>
+                    <a id="nav-approved-apps" class="list-group-item list-group-item-action">Approved Applications</a>
+                    <a id="nav-rejected-apps" class="list-group-item list-group-item-action">Rejected Applications</a>
+                    <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action">Logout</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+
+                <div id="section-subscribed-users" class="content-section">
+                    <h3>Subscribed Users</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Role</th>
+                                <th>Email</th>
+                                <th>Plan</th>
+                                <th>Created_at</th>
+                                <th>Expired_at</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in subscription %}
+                                <tr>
+                                    <td>{{ role }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.plan }}</td>
+                                    <td>{{ user.created_at }}</td>
+                                    <td>{{ user.expire_date }}</td>
+                                </tr>
+                            {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Users Section -->
+                <div id="section-users" class="content-section">
+                    <h3>Users</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                                <tr>
+                                    <td>{{ user.username }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.role }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- Companies Section -->
+                <div id="section-companies" class="content-section">
+                    <h3>Companies</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Logo</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for company in companies %}
+                                <tr>
+                                    <td><img src="{{ company.company_logo }}" alt="{{ company.company_name }} Logo"></td>
+                                    <td>{{ company.company_name }}</td>
+                                    <td>{{ company.email }}</td>
+                                    <td>{{ company.location }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pending Requests Section -->
+                <div id="section-pending" class="content-section">
+                    <h3>Pending Company Requests</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Location</th>
+                                <th>Internship</th>
+                                <th>View Details</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for company in pending_companies %}
+                                <tr>
+                                    <td>{{ company.company_name }}</td>
+                                    <td>{{ company.location }}</td>
+                                    <td>{{ company.internship }}</td>
+                                     <td><a href="{{ url_for('details_page1', company_id=company.id) }}" class="view-details-btn">View Details</a></td>
+                                    <td>
+                                        <form method="POST" action="{{ url_for('approve_company', company_id=company.id) }}">
+                                            <button type="submit" class="btn btn-success">Approve</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form method="POST" action="{{ url_for('reject_company', company_id=company.id) }}">
+                                            <button type="submit" class="btn btn-danger">Reject</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Approved Section -->
+                <div id="section-approved" class="content-section">
+                    <h3>Approved Companies</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for company in approved_companies %}
+                                <tr>
+                                    <td>{{ company.company_name }}</td>
+                                    <td>{{ company.status }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Rejected Section -->
+                <div id="section-rejected" class="content-section">
+                    <h3>Rejected Companies</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for company in rejected_companies %}
+                                <tr>
+                                    <td>{{ company.company_name }}</td>
+                                    <td>{{ company.status }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pending Applications Section -->
+                <div id="section-pending-apps" class="content-section">
+                    <h3>Pending Applications</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Application ID</th>
+                                <th>Applicant Name</th>
+                                <th>Email</th>
+                                <th>View Resume</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for app in pending_applications %}
+                                <tr>
+                                    <td>{{ app.id }}</td>
+                                    <td>{{ app.name }}</td>
+                                    <td>{{ app.email }}</td>
+                                    <td>
+                                        <a href="{{ url_for('view_resumes', application_id=app.id) }}"  target="blank"  class="btn btn-primary">
+                                            View Resume
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form method="POST" action="{{ url_for('approve_application', app_id=app.id) }}">
+                                            <button type="submit" class="btn btn-success">Approve</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form method="POST" action="{{ url_for('reject_application', app_id=app.id) }}">
+                                            <button type="submit" class="btn btn-danger">Reject</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Approved Applications Section -->
+                <div id="section-approved-apps" class="content-section">
+                    <h3>Approved Applications</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Application ID</th>
+                                <th>Applicant Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for app in approved_applications %}
+                                <tr>
+                                    <td>{{ app.id }}</td>
+                                    <td>{{ app.name }}</td>
+                                    <td>{{ app.email }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Rejected Applications Section -->
+                <div id="section-rejected-apps" class="content-section">
+                    <h3>Rejected Applications</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Application ID</th>
+                                <th>Applicant Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for app in rejected_applications %}
+                                <tr>
+                                    <td>{{ app.id }}</td>
+                                    <td>{{ app.name }}</td>
+                                    <td>{{ app.email }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.list-group-item');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.id.replace('nav-', 'section-');
+
+                    sections.forEach(section => section.classList.remove('active'));
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Show default section on page load
+            document.getElementById('section-users').classList.add('active');
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 TalentConnect. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

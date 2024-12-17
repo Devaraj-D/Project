@@ -1,0 +1,82 @@
+{% extends 'job_portal/base.html' %}
+
+{% block content %}
+<!-- Success Page Container -->
+<div class="success-container">
+  <!-- Success Icon Section -->
+  <div class="success-icon">
+    <i class="fas fa-check-circle"></i>
+  </div>
+
+  <!-- Success Message -->
+  <h2 class="success-heading">Profile Created Successfully!</h2>
+  
+  <!-- Description Message -->
+  <p class="success-description">Congratulations! Your profile has been successfully created. You can now access all features and update your information at any time.</p>
+
+  <!-- Redirect Button -->
+  <a href="{% url 'login' %}" class="success-button">Go to Login</a>
+</div>
+
+
+
+{% block styles %}
+<style>
+  .success-container {
+    background-color: #f0f9ff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .success-icon {
+    font-size: 100px;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+
+  .success-heading {
+    font-size: 36px;
+    color: #28a745;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .success-description {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .success-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .success-button:hover {
+    background-color: #218838;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+{% endblock %}
+{% endblock content %}

@@ -1,0 +1,109 @@
+{% extends 'job_portal/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'job_portal/candidate.css' %}">
+<div class="profile-container">
+    <h2>Candidate Registration</h2>
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>Please correct the errors below:</strong>
+        <ul>
+            {% for field in form %}
+                {% if field.errors %}
+                    <li><strong>{{ field.label }}:</strong> {% for error in field.errors %}{{ error }} {% endfor %}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" class="form-control" value="{{ form.name.value }}" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" class="form-control" value="{{ form.email.value }}" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Phone Number</label>
+            <input type="text" name="mobile" id="mobile" class="form-control" value="{{ form.mobile.value }}" placeholder="Enter your mobile number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label><br>
+            <input type="radio" name="gender" value="M" {% if form.gender.value == 'M'%}checked {% endif %}> Male
+            <input type="radio" name="gender" value="F" {% if form.gender.value == 'F'%}checked {% endif %}> Female
+            <input type="radio" name="gender" value="O" {% if form.gender.value == 'O'%}checked {% endif %}> Other
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" class="form-control" value="{{ form.dob.value }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="qualifications">Qualifications</label>
+            <textarea name="qualifications" id="qualifications" class="form-control" placeholder="Enter your qualifications">{{ form.qualifications.value }}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="stream">Field of Study</label>
+            <input type="text" name="stream" id="stream" class="form-control" value="{{ form.stream.value }}" placeholder="Enter your field of study">
+        </div>
+
+        <div class="form-group">
+            <label for="skills">Skills</label>
+            <select name="skills" id="skills" class="form-control" multiple>
+                {% for skill in form.skills.field.queryset %}
+                    <option value="{{ skill.id }}" {% if skill in form.skills.value %}selected{% endif %}>{{ skill.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="domain_preferences">Preferred Domains</label>
+            <select name="domain_preferences" id="domain_preferences" class="form-control" multiple>
+                {% for domain in form.domain_preferences.field.queryset %}
+                    <option value="{{ domain.id }}" {% if domain in form.domain_preferences.value %}selected{% endif %}>{{ domain.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cv">Upload CV (PDF only)</label>
+            <input type="file" name="cv" id="cv" class="form-control" accept="application/pdf">
+        </div>
+
+        <div class="form-group">
+            <label for="profile_image">Upload Profile Image</label>
+            <input type="file" name="profile_image" id="profile_image" class="form-control" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="linkedin_url">LinkedIn URL</label>
+            <input type="url" name="linkedin_url" id="linkedin_url" class="form-control" value="{{ form.linkedin_url.value }}" placeholder="Enter your LinkedIn URL">
+        </div>
+
+        <!-- Password Fields -->
+        <div class="form-group">
+            <label for="password" style="display:block;">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required style="width: 100%; padding: 8px;">
+        </div>
+
+        <div class="form-group">
+            <label for="confirm_password" style="display:block;">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm your password" required style="width: 100%; padding: 8px;">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock %}

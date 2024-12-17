@@ -1,0 +1,265 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans and Pricing</title>
+  <link rel="stylesheet" href="static/css/subscription.css">
+  <link rel="stylesheet" href="static/css/header.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <div class="signup-container">
+    <header class="header-wrapper">
+      
+        <div class="brand-logo">TalentConnect</div>
+        <nav class="nav-links">
+        
+      </nav>
+      <div class="user-profile">
+        <img src="/static/assests/profile-placeholder.png" alt="User Profile" class="profile-icon" />
+      </div>
+   <!--  <div class="search-section">
+        <div class="search-bar" role="search">
+          <div class="search-input-wrapper">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/728315a4dee7886052f73849805a080167688f2df94a767b1b67861977e91d84?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="" class="search-icon" />
+            <input type="search" class="search-input" placeholder="Search" aria-label="Search" />
+          </div>
+        </div>
+        <a href="sign.html" class="login-button">Login</a>
+      </div>--> 
+    </header>
+    </div>
+
+    
+  <div class="pricing-container" >
+   
+    <div class="plansection" >
+    <section class="hero" >
+      <h2>Now save BIG on your hiring budget</h2>
+      <h1 class="highlight">Post unlimited premium internships and jobs</h1>
+    </section>
+
+    <section class="plans">
+      <div class="parent-plans">
+        <div class="card">
+            <div class="content-box">
+                <span class="card-title">1 Month Plan.</span>
+                <p class="card-content">
+                  Save 20% + 25%   
+                </p>
+                <p class="card-content">
+                  First time user discount   
+                </p>
+                <button id="checkout-button-yearly" class="Buy">Buy</button>
+            </div>
+            <div class="date-box">
+                <span class="month">popular</span>
+                <span class="strike">₹1,000</span>
+            </div>
+        </div>
+      </div>
+      <div class="parent-plans">
+        <div class="card">
+            <div class="content-box">
+                <span class="card-title">1 year plan.</span>
+                <p class="card-content">
+                  Save 20% + 25%   
+                </p>
+                <p class="card-content">
+                  Exclusive offer For a year ...  
+                </p>
+                <button id="checkout-button-monthly" class="Buy">Buy</button>
+            </div>
+            <div class="date-box">
+                <span class="month">popular</span>
+                <span class="strike">₹10,000</span>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="separator">OR</div>
+
+    <section class="custom-plan">
+      <p>Want a pack of listings?</p>
+      <p>Get the best price for a pack of 5, 10, 20 or more listings valid for up to 1 year.</p>
+      
+    </section>
+
+    <section class="contact">
+      <p>Reach out to us on <a href="tel:+911234567890">+91 75503 44823</a> or <a href="mailto:TalentConnect@gmail.com">TalentConnect@gmail.com</a> for more details.</p>
+    </section>
+    </div>
+    <section class="benefits">
+      <h3>Now enjoy premium benefits for all your internships and jobs</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Benefits</th>
+            <th>Free</th>
+            <th>Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>World class product with features like interview scheduler, assignment tool, and more</td>
+            <td>✔️</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Number of internship or jobs listings in a month</td>
+            <td>1</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Extra visibility for all listings</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Smart database access for all internships and jobs</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Unlock premium features like contact numbers, export to excel, and more</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+          <tr>
+            <td>Dedicated Relationship Manager</td>
+            <td>❌</td>
+            <td>✔️</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <p>For any queries, reach out to us at <a href="tel:+911234567890">+91 12345 67890</a> or <a href="mailto:talentconnect@gmail.com">TalentConnect@gmail.com</a>, available from Mon-Fri, 9:30 AM to 6:30 PM.</p>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <a href="#" class="footer-logo">TalentConnect</a>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <img src="/static/assests/fb.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <img src="/static/assests/ig.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/359a47695652814524bba008dd9a28794a83bab9e54b4e70326a325b90140879?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c25286e4281b6f702138180bd96cb7d5f28092ef68384f172581822bad4dde62?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="" />
+          </a>
+        </div>
+      </div>
+  
+      <div class="footer-col">
+        <nav class="footer-links">
+          <a href="#" class="footer-link">About us</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Employer home</a>
+          <a href="#" class="footer-link">Sitemap</a>
+          <a href="#" class="footer-link">Credits</a>
+        </nav>
+      </div>
+  
+      <div class="footer-col">
+        <nav class="footer-links">
+          <a href="#" class="footer-link">Help center</a>
+          <a href="#" class="footer-link">Summons/Notices</a>
+          <a href="#" class="footer-link">Grievances</a>
+          <a href="#" class="footer-link">Report issue</a>
+        </nav>
+      </div>
+  
+      <div class="footer-col">
+        <nav class="footer-links">
+          <a href="#" class="footer-link">Privacy policy</a>
+          <a href="#" class="footer-link">Terms & conditions</a>
+          <a href="#" class="footer-link">Fraud alert</a>
+          <a href="#" class="footer-link">Trust & safety</a>
+        </nav>
+      </div>
+  
+      <div class="footer-col">
+        <!--<div class="app-download">
+          <h2 class="app-title">Apply on the go</h2>
+          <p class="app-subtitle">Get real-time job updates on our App</p>
+          <div class="app-buttons">
+            <a href="#" class="app-button">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ca7cf4af68dc89d0c5125d82a00beb4788699837f04973f52367dc0e0d7bcb3?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="Download on the App Store" />
+            </a>
+            <a href="#" class="app-button">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cca337ab1a1c846868bba1ad0a41c10da8c4fd106c21b3ad2fe20201548b453a?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="Get it on Google Play" />
+            </a>
+          </div>
+        </div>-->
+      
+  
+      <div class="app-section">
+        <div class="app-container">
+          <h2 class="app-title">Apply on the go</h2>
+          <p class="app-description">Get real-time job updates on our App</p>
+          <div class="app-links">
+            <a href="#" class="store-link">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fda117ab2d9f4db64d0fddd63aabb7f15cd1220738ad54f2135600bf4bdb94f3?placeholderIfAbsent=true&apiKey=3cc6d83a49d44ee886ecb5b07ba31135" alt="Download on the App Store" class="store-image" />
+            </a>
+            <a href="#" class="store-link">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/aaeb53d894d491ee83f3397a8a8cabf2fc3901c394e86867e5e85b91f537922f?placeholderIfAbsent=true&apiKey=3cc6d83a49d44ee886ecb5b07ba31135" alt="Get it on Google Play" class="store-image" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <script>
+      const stripe = Stripe("{{ stripe_publishable_key }}"); // Use the Publishable Key from Flask
+
+  document.getElementById("checkout-button-monthly").addEventListener("click", async () => {
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+      body: JSON.stringify({ plan: "monthly" }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const session = await response.json();
+
+    // Redirect to Stripe Checkout
+    const result = await stripe.redirectToCheckout({ sessionId: session.id });
+    if (result.error) {
+      alert(result.error.message);
+    }
+  });
+
+  document.getElementById("checkout-button-yearly").addEventListener("click", async () => {
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+      body: JSON.stringify({ plan: "yearly" }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const session = await response.json();
+
+    // Redirect to Stripe Checkout
+    const result = await stripe.redirectToCheckout({ sessionId: session.id });
+    if (result.error) {
+      alert(result.error.message);
+    }
+  });
+
+  </script>
+
+    
+
+    
+</body>
+</html>

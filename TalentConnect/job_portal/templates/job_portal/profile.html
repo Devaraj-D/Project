@@ -1,0 +1,61 @@
+{% extends 'job_portal/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Picture Upload</title>
+  <link rel="stylesheet" href="{% static 'job_portal/profile.css' %}">
+</head>
+<body>
+  <div class="upload-container">
+    <h1>Update Your Profile Picture</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="profilePicture">Choose a Profile Picture:</label>
+        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
+      </div>
+      <button type="submit" class="btn-upload">Upload</button>
+    </form>
+    <div id="uploadResult" class="upload-result"></div>
+  </div>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      const formData = new FormData();
+      const fileInput = document.getElementById('profilePicture');
+
+      if (fileInput.files.length === 0) {
+        alert('Please select a file to upload.');
+        return;
+      }
+
+      formData.append('profilePicture', fileInput.files[0]);
+
+      try {
+        const response = await fetch('http://localhost:5000/update-profile', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+        const uploadResult = document.getElementById('uploadResult');
+
+        if (response.ok) {
+          uploadResult.innerHTML = `
+            <p>${result.message}</p>
+            <img src="${result.filePath}" alt="Uploaded Profile Picture" class="uploaded-image">
+          `;
+        } else {
+          uploadResult.innerHTML = `<p class="error">Error: ${result.message}</p>`;
+        }
+      } catch (error) {
+        console.error('Upload failed:', error);
+        alert('An error occurred during the upload.');
+      }
+    });
+  </script>
+</body>
+{% endblock content %}

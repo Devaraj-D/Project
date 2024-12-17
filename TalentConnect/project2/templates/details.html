@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Details{% endblock %}
+
+{% block styles %}
+<style>
+    .details-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+    .details-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .details-header h1 {
+        margin: 0 0 10px;
+        color: #007bff;
+    }
+    .details-header p {
+        margin: 5px 0;
+        font-size: 1em;
+    }
+    .details-content {
+        margin-top: 20px;
+    }
+    .details-content p {
+        margin: 10px 0;
+        line-height: 1.6;
+    }
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .back-btn {
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .back-btn:hover {
+        background-color: #5a6268;
+    }
+    .apply-btn {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .apply-btn:hover {
+        background-color: #218838;
+    }
+    .applied-btn {
+        padding: 10px 20px;
+        background-color: gray;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: not-allowed;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="details-container">
+    <div class="details-header">
+<!--        <h1>{{ company.company_name }}</h1>-->
+        <p><strong>Details</strong></p>
+    </div>
+    <div class="details-content">
+        <p><strong>Duration:</strong> {{ company.duration }}</p>
+        <p><strong>Skills Required:</strong> {{ company.skills }}</p>
+        <p><strong>Location:</strong> {{ company.location }}</p>
+        <p><strong>Certification Courses:</strong> {{ company.certification_courses }}</p>
+        <p><strong>Who Can Apply:</strong> {{ company.who_can_apply }}</p>
+        <p><strong>No. of Vacancies:</strong> {{ company.no_of_vacancies }}</p>
+        <p><strong>About Internship:</strong> {{ company.about_internship }}</p>
+<!--        <p>-->
+<!--            TalentConnect is a dot com business with the heart of dot org. Our platform aims to augment individuals' professional growth by helping freshers and experienced job seekers find employment opportunities, skill up, create a network, and build a meaningful career.-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            Our ed-tech platform, TalentConnect Trainings, offers short-term certification courses to help students, professionals, and job seekers upskill. We also offer beginner-friendly placement guarantee courses that come with industry-recognized certifications and a job guarantee.-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            You can also check out TalentConnect Clubs, our social networking platform, allowing students to connect with peers/professionals, share insights, and collaborate with like-minded individuals.-->
+<!--        </p>-->
+    </div>
+    <div class="button-group">
+        <a href="{{ url_for('dashboard') }}" class="back-btn">Back to Dashboard</a>
+        {% if has_applied %}
+            <a class="applied-btn">Applied</a>
+        {% else %}
+            <a href="{{ url_for('apply', company_id=company.id) }}" class="apply-btn">Apply</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

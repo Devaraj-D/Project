@@ -1,0 +1,417 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  .hero h2 {
+    font-size: 28px;
+    color: #fff;
+    background-color: #45919a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .hero .highlight {
+    font-size: 25px;
+    margin: 10px 0;
+    margin-bottom: 25px;
+
+  }
+  
+  .plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .plan {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius:15px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+  }
+  .plansection{
+    background-color: #45919a;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .plan.popular {
+    border: 2px solid #007bff;
+  }
+  
+  .plan .tag {
+    background: #ffc107;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    position: absolute;
+    margin: -15px 0 10px 10px;
+  }
+  
+  .plan h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  .plan .price {
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  
+
+  .plan .strike {
+    text-decoration: line-through;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .plan .discount {
+    font-size: 14px;
+    color: #28a745;
+  }
+  
+  .plan .btn-primary {
+    background: #e6853b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .plan .btn-primary:hover {
+    background: #0056b3;
+  }
+
+  .separator {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .custom-plan {
+    margin: 20px 0;
+  }
+  
+  .custom-plan .btn-secondary {
+    background: #e6853b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .contact a{
+    color: white;
+    text-decoration: none;
+    text-indent: 10px;
+  }
+  
+  .benefits table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    justify-content: center;
+    
+  }
+  
+  .benefits th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .benefits th {
+    background: #45919a;
+    color: #fff;
+    margin-bottom: 25px;
+  }
+
+  .benefits td {
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: left;
+
+    margin-bottom: 500px;
+  }
+  
+  
+  .benefits .btn-primary {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #45919a;
+    border-radius: 0px;
+    padding: 10px 10px;
+    border: none;
+    color: white;
+    
+  }
+  
+  
+  
+  
+  .footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 0;
+    background: #f1f1f1;
+  }
+
+  .footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px 0;
+    margin-top: 40px;
+  }
+  
+  .footer-content {
+    max-width: 1224px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-col {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .footer-logo {
+  color: #006bc2;
+  font: 600 18px/24px Inter, sans-serif;
+  margin-left: 20px;
+  text-decoration: none;
+  }
+  
+  .social-links {
+    display: flex;
+    align-self: self-start;
+    gap: 15px;
+    padding: 20px;
+    color: #f9f9f9;
+    
+  }
+  
+  .social-icon {
+    width: 20px;
+    height: 20px;
+    color: #e7e7f1;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .footer-link {
+    color: var(--text-color, #121224);
+    font: 500 13px/18px var(--font-family-base, Inter);
+    text-decoration: none;
+  }
+  
+  .app-download {
+    background: #fff;
+    border: 1px solid var(--border-color, #e7e7f1);
+    border-radius: 20px;
+    padding: 24px 25px;
+  }
+  
+  .app-title {
+    color: var(--text-color, #121224);
+    font: 700 15px/20px var(--font-family-base, Inter);
+    margin-bottom: 4px;
+  }
+  
+  .app-subtitle {
+    color: var(--text-muted, #474d6a);
+    font: 500 11px/15px var(--font-family-base, Inter);
+    margin-bottom: 16px;
+  }
+  
+  .app-buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .app-button {
+    width: 149px;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  .app-section {
+  width: 100%;
+  }
+  
+  .app-container {
+  border-radius: 20px;
+  border: 1px solid var(--color-grey-93, #e7e7f1);
+  background: var(--www-naukri-com-white, #fff);
+  min-height: 152px;
+  gap: 4.3px;
+  margin: auto -49px auto 0;
+  padding: 24px 25px;
+  }
+  
+  .app-title {
+  color: var(--www-naukri-com-vulcan, #121224);
+  font: 700 15px/20px Inter;
+  }
+  
+  .app-description {
+  margin-top: 4px;
+  color: var(--www-naukri-com-fiord, #474d6a);
+  font: 500 11px/15px Inter;
+  }
+  
+  .app-links {
+  display: flex;
+  margin-top: 4px;
+  padding-top: 16px;
+  gap: 12px;
+  }
+  
+  .store-link {
+  width: 149px;
+  }
+  
+  .store-image {
+  aspect-ratio: 3.39;
+  width: 149px;
+  max-width: 100%;
+  }
+
+  /* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;  /* Stack the columns vertically */
+    padding: 20px;
+  }
+
+  .footer-col {
+    text-align: center;  /* Center text on mobile */
+    margin-bottom: 20px;  /* Add spacing between columns */
+  }
+
+  .footer-logo {
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 20px;  /* Ensure there's space below the logo */
+  }
+
+  .social-links {
+    justify-content: center;  /* Center the social media icons */
+    gap: 15px;
+    padding: 10px 0;  /* Adjust padding for better mobile spacing */
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: row;  /* Arrange links horizontally */
+    flex-wrap: wrap;  /* Allow wrapping if space is limited */
+    justify-content: center;
+    gap: 20px;  /* Increase space between the links */
+  }
+
+  .app-section {
+    width: 100%;  /* Ensure app section takes full width */
+    margin-top: 20px;  /* Add space before app section */
+  }
+
+  .app-container {
+    margin: 0 auto;  /* Center the app container */
+    padding: 20px;  /* Adjust padding for mobile */
+    border-radius: 15px;  /* Slightly reduced border radius */
+  }
+
+  .app-title {
+    font-size: 16px;  /* Adjust font size for smaller screens */
+  }
+
+  .app-description {
+    font-size: 13px;  /* Adjust font size for smaller screens */
+    margin-top: 10px;
+  }
+
+  .app-links {
+    justify-content: center;  /* Center app store links */
+    gap: 15px;
+  }
+
+  .store-link {
+    width: 120px;  /* Reduce width of the store buttons */
+  }
+
+  .store-image {
+    width: 100%;  /* Make the store images responsive */
+    max-width: 120px;  /* Limit the max width */
+  }
+}
+
+/* Optional: Adjust for very small screens (portrait phones) */
+@media (max-width: 480px) {
+  .footer-logo {
+    font-size: 16px;  /* Smaller font size for logo */
+  }
+
+  .footer-link {
+    font-size: 12px;  /* Smaller font size for links */
+  }
+
+  .app-title {
+    font-size: 14px;  /* Smaller app title */
+  }
+
+  .app-description {
+    font-size: 11px;  /* Smaller app description */
+  }
+
+  .store-link {
+    width: 100px;  /* Further reduce button width */
+  }
+
+  .store-image {
+    width: 100%;  /* Ensure the store images are responsive */
+  }
+}

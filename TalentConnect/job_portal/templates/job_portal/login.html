@@ -1,0 +1,30 @@
+{% extends 'job_portal/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'job_portal/styles.css' %}">
+<div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="role">Login as:</label>
+            <select name="role" required>
+                <option value="student">Student</option>
+                <option value="employer">Employer</option>
+            </select>
+        </div>
+        <button type="submit" onclick="window.location.href='{% url 'index' %}'">Login</button>
+    </form>
+    <div class="forgot-password">
+        <a href="#">Forgot your password?</a>
+    </div>
+</div>
+{% endblock %}

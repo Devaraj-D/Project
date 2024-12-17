@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Job</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow: auto;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        form input,
+        form textarea,
+        form button {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+
+        form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        button {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .file-upload-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .file-upload-container input {
+            width: auto;
+        }
+
+        .file-upload-container .file-info {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-group label {
+            color: #555;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .backdrop {
+            background: rgba(0, 0, 0, 0.04);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .skills-list {
+            margin-top: 10px;
+            list-style-type: none;
+            padding-left: 0;
+            color: #555;
+        }
+
+        .skills-list li {
+            display: inline-block;
+            background: #f1f1f1;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Post a New Job</h1>
+        <form method="POST" enctype="multipart/form-data" action="/company_dashboard">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Company Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="location" placeholder="Location" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="internship" placeholder="Internship Title" required>
+            </div>
+            <div class="form-group">
+                <label for="skills">Required Skills</label>
+                <input type="text" id="skills" placeholder="Enter a skill and press Enter" onkeydown="addSkill(event)">
+                <ul id="skills-list" class="skills-list"></ul>
+                <!-- Hidden input to store skills -->
+                <input type="hidden" id="skills-hidden" name="skills">
+            </div>
+<!--            <div class="form-group">-->
+<!--                <input type="number" name="payment" placeholder="Payment (in USD)" required>-->
+<!--            </div>-->
+            <div class="form-group">
+                <input type="text" name="duration" placeholder="Duration (e.g., 3 months)" required>
+            </div>
+<!--            <div class="form-group">-->
+<!--                <textarea name="about_internship" placeholder="About Internship" required></textarea>-->
+<!--            </div>-->
+            <div class="form-group">
+                <input type="text" name="certification_courses" placeholder="Certification Courses">
+            </div>
+            <div class="form-group">
+                <input type="text" name="who_can_apply" placeholder="Eligibility Criteria">
+            </div>
+            <div class="form-group">
+                <input type="number" name="no_of_vacancies" placeholder="Number of Vacancies">
+            </div>
+            <div class="form-group">
+                <textarea name="about_internship" placeholder="About Internship"></textarea>
+            </div>
+            <div class="form-group file-upload-container">
+                <label for="logo">Upload Company Logo:</label>
+                <input type="file" name="logo" id="logo" accept="image/*" required>
+                <span class="file-info">Max size: 5MB, Accepted formats: .jpg, .png</span>
+            </div>
+            <div class="text-center">
+                <button type="submit">Submit Job Post</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const skillsList = document.getElementById('skills-list');
+        const skillsHiddenInput = document.getElementById('skills-hidden');
+    
+        function addSkill(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const skillInput = event.target;
+                const skillValue = skillInput.value.trim();
+    
+                if (skillValue) {
+                    const li = document.createElement('li');
+                    li.textContent = skillValue;
+    
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'x';
+                    removeButton.onclick = () => {
+                        skillsList.removeChild(li);
+                        updateHiddenInput();
+                    };
+    
+                    li.appendChild(removeButton);
+                    skillsList.appendChild(li);
+                    skillInput.value = '';
+    
+                    updateHiddenInput();
+                }
+            }
+        }
+    
+        function updateHiddenInput() {
+            const skills = Array.from(skillsList.querySelectorAll('li')).map(li => li.firstChild.textContent.trim());
+            skillsHiddenInput.value = JSON.stringify(skills); // Store as a JSON array
+        }
+    </script>
+</body>
+</html>

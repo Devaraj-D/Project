@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Internship</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 110%;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Input Fields */
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="file"] {
+            width: 95%;
+            padding: 12px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="file"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        input[readonly] {
+            background-color: #f9f9f9;
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+
+        /* Additional Effects */
+        button[type="submit"]:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            input[type="file"] {
+                padding: 10px;
+            }
+
+            button[type="submit"] {
+                font-size: 14px;
+                padding: 12px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Apply for Internship</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label for="mobile_number">Mobile Number</label>
+            <input type="text" name="mobile_number" placeholder="Enter your mobile number" required>
+
+            <label for="qualification">Qualification</label>
+            <input type="text" name="qualification" placeholder="Your qualification" required>
+
+            <label for="year_of_graduation">Year of Graduation</label>
+            <input type="number" name="year_of_graduation" placeholder="Year of graduation" required>
+
+            <label for="resume">Resume</label>
+            <input type="file" name="resume" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

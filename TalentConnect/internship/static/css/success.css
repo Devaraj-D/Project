@@ -1,0 +1,242 @@
+/* General styles */
+/*
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+  }*/
+
+
+
+/*.header-wrapper {
+    align-self: center;
+    display: flex;
+    width: 100%;
+    max-width: 1190px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  */
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/img/success.jpg') no-repeat center center ;
+    background-size: cover;
+    
+    z-index: 0; /* Behind the content */
+    border-radius: none; /* Rounded corners for better visuals */
+  }
+
+  .message-box {
+    position: relative;
+    z-index: 0; /* Above the blurred background */
+    padding: 20px 30px;
+    background-color: transparent; /* Transparent white */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    
+    justify-content: center;
+    align-items: center;
+    
+  }
+ a{
+  text-decoration: none;
+  color:white
+ }
+ .apply-btn .a:hover{
+  background-color: rgb(81, 136, 118);
+ }
+  .status {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+
+  .subtext {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .apply-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0073e6;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .apply-btn:hover {
+    background-color: #005bb5;
+  }
+
+
+  /*.container {
+    margin-top: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  /*.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/img/success.jpg') ;
+    background-size: cover;
+    
+    z-index: 0; /* Behind the content */
+    /*border-radius: none; /* Rounded corners for better visuals */
+  /*}
+
+  .message-box {
+    position: relative;
+    z-index: 0; 
+    padding: 20px 30px;
+    background-color: transparent; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    
+  }*/
+
+  /*.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/img/success.jpg');
+    background-size: cover;
+    z-index: 0;
+    border-radius: none;
+}
+
+/* Message box styles */
+/*.message-box {
+    position: relative;
+    z-index: 1;
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+  .status {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+
+  .subtext {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .apply-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0073e6;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .apply-btn:hover {
+    background-color: #005bb5;
+  }*/
+
+@media (max-width: 768px) {
+    .header-wrapper {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 20px;
+    }
+  
+    .nav-links {
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+    }
+  
+    .search-bar {
+      min-width: 50%;
+      margin: 10px 0;
+      align-self:flex-start;
+    }
+    .login-button{
+      font-size: 13px;
+      padding: 6px 12px;
+      align-self:flex-start;
+    }
+  
+    
+  }
+  
+  @media (max-width: 480px) {
+    .nav-link {
+      padding: 15px 10px;
+      font-size: 12px;
+    }
+  
+    .brand-logo {
+      font-size: 16px;
+    }
+  
+    .search-bar {
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .search-input-wrapper {
+      min-width: unset;
+      padding: 4px;
+    }
+  
+    .search-input {
+      font-size: 10px;
+    }
+    
+   
+    
+  }

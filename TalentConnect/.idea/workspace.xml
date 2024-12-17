@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="11149c0f-72f1-43d4-92a8-a1a3866b39a1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/.idea/JIM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/JIM/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/JIM/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/JIM/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/JIM/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/JIM/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0002_company_user_remove_application_applicant_name_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0003_alter_application_options_alter_company_options_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0004_alter_application_table_alter_company_table_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0005_studentprofile_delete_application_delete_company_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0006_rename_qualifications_studentprofile_education_level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0007_rename_education_level_studentprofile_qualifications.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0008_remove_studentprofile_address_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/0009_organization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/css/apply.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/css/details.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/css/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/css/success.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/bout.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/coursera.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/edx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/google.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/indeed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/internshala.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/lead3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/letsintern1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/linkedin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/naukri.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/success.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/static/img/udemy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/templates/internship/employer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/templates/internship/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/internship/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0002_domain_skill_studentprofile_cv_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0003_alter_studentprofile_domain_preferences_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0004_companyprofile_remove_userprofile_user_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0005_studentprofile_linkedin_url_studentprofile_stream_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0006_remove_companyprofile_twitter_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0007_companyprofile_confirm_password_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0008_studentprofile_confirm_password_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/0009_delete_companyprofile_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/OIP.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/T .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/appstore.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/audi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/background1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/banner-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/banner-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/banner-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/google.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/home.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/ibm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/instagram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/java.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/js.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/lady.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/leads.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/meta.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/ml.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/playstore.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/puma.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/sony.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/tc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/telephone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/welcom1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/welcome.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/wipro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/images/zoho.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/candidate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/company_dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/employer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/header1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/imgurl-1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/index1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/index1_header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/loader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/profile1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/styles1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/job_portal/subscription.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/static/js/candidate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/admin_login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/banner-1.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/candidate_reg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/company_dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/employer_reg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/imgurl-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/index1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/login_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/profile1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/profile_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/templates/job_portal/txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/job_portal/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/alembic.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/script.py.mako" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/versions/092a03ffda73_new_column_four_added.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/versions/11688d770278_new_column_duration_added.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/versions/812b38295842_corrected_the_string_values.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/versions/86a667b339be_email_column_added_in_company.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/versions/ad35c608d0a6_fix_backref_conflicts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/migrations/versions/ca58891a0258_new_column_added.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/assests/T_-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/assests/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/assests/fb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/assests/ig.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/css/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/css/index1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/css/subscription.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/resumes/PATTA933.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/resumes/PATTA934.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/resumes/tables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/resumes/zero_pet1.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/uploads/1734262290635.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/uploads/T_-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/uploads/backend.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/uploads/download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/uploads/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/uploads/kalai1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/static/uploads/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/admin_dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/admin_signin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/admin_signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/application_tracking.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/apply.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/company_dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/details1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/post_job.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/subscription .html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/project2/templates/view_applicants.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/..//TalentConnect/run.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/project2/app.py" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2pn3nCuszBaaCKOZcwpkwluvZP7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/TalentConnect&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JIM - I\project2\static\css" />
+      <recent name="D:\JIM - I\job_portal\static\job_portal" />
+      <recent name="D:\JIM - I\job_portal\templates\job_portal" />
+      <recent name="D:\JIM - I\job_portal\static\images" />
+      <recent name="D:\JIM - I\project2\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JIM - I\internship\templates\internship" />
+      <recent name="C:\Users\arasa\OneDrive\Desktop\Key Coders\Project\JIM\internship\templates\internship" />
+      <recent name="C:\Users\arasa\OneDrive\Desktop\Key Coders\Project\JIM\job_portal\static" />
+      <recent name="C:\Users\arasa\OneDrive\Desktop\Key Coders\Project\JIM\media\images" />
+      <recent name="C:\Users\arasa\OneDrive\Desktop\Key Coders\Project\JIM\job_portal\templates\job_portal" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11149c0f-72f1-43d4-92a8-a1a3866b39a1" name="Changes" comment="" />
+      <created>1733388176606</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733388176606</updated>
+    </task>
+    <servers />
+  </component>
+</project>

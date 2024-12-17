@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Include any specific stylesheets for the dashboard -->
+<link rel="stylesheet" href="{% static 'job_portal/company_dashboard.css' %}">
+
+<div class="container-fluid">
+    <!-- Navigation Sidebar -->
+    <div class="row">
+        <div class="col-md-3 sidebar">
+            <div class="sidebar-header">
+                <h3>Company Dashboard</h3>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'company_dashboard' %}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_job' %}">Post Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'view_applicants' %}">View Applicants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'subscription_status' %}">Subscription</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Dashboard Area -->
+        <div class="col-md-9 main-dashboard">
+            <h2>Dashboard Overview</h2>
+            <div class="dashboard-cards">
+                <!-- Active Job Posts -->
+                <div class="card">
+                    <h4>Active Job Posts</h4>
+                    <p>{{ active_job_posts }}</p>
+                </div>
+
+                <!-- Number of Applicants -->
+                <div class="card">
+                    <h4>Number of Applicants</h4>
+                    <p>{{ num_of_applicants }}</p>
+                </div>
+
+                <!-- Subscription Status -->
+                <div class="card">
+                    <h4>Subscription Status</h4>
+                    <p>{{ subscription_status }}</p>
+                </div>
+            </div>
+
+            <!-- Job Posting Form -->
+            <div class="post-job">
+                <h3>Post a New Job</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="job_title">Job Title</label>
+                        <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Enter job title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="job_description">Job Description</label>
+                        <textarea class="form-control" name="job_description" id="job_description" rows="4" placeholder="Enter job description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="salary_range">Salary Range</label>
+                        <input type="text" class="form-control" name="salary_range" id="salary_range" placeholder="Enter salary range" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" name="location" id="location" placeholder="Enter job location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="required_skills">Required Skills</label>
+                        <input type="text" class="form-control" name="required_skills" id="required_skills" placeholder="Enter required skills" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Job</button>
+                </form>
+            </div>
+
+            <!-- View Applicants Table -->
+            <div class="view-applicants">
+                <h3>Applicants List</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Applicant Name</th>
+                            <th>Skills</th>
+                            <th>Education</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for applicant in applicants %}
+                            <tr>
+                                <td>
+                                    {% if not user.is_subscriber %}
+                                        {{ applicant.name|slice:":1" }}*** <!-- Mask the name for non-subscribers -->
+                                    {% else %}
+                                        {{ applicant.name }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ applicant.skills }}</td>
+                                <td>{{ applicant.education }}</td>
+                                <td>{{ applicant.status }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

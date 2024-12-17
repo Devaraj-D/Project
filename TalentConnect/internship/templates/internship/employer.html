@@ -1,0 +1,243 @@
+{% extends 'job_portal/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization Details</title>
+  <style> 
+    /* General Reset */
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  background-color: #192A51;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  margin-bottom: 15px;
+  width: 250px;
+}
+
+form {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  width: 48%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #192A51;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: #192A51;
+}
+
+#imagePreview {
+  width: 100%;
+  height: 150px;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #999;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      
+    </div>
+
+    <!-- Organization Form -->
+    <form id="organizationForm">
+        <h2>Organization Detail</h2>
+        <!-- Employee Name and Email -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Employee Name</label>
+            <input type="text" placeholder="Enter employee name" required />
+          </div>
+          <div class="form-group">
+            <label>Employee Email</label>
+            <input type="email" placeholder="Enter employee email" required />
+          </div>
+        </div>
+      
+        <!-- Phone Number and Industry Type -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" required />
+          </div>
+          <div class="form-group">
+            <label>Industry Type</label>
+            <select required>
+              <option value="">Select Industry</option>
+              <option value="IT">Information Technology</option>
+              <option value="Finance">Finance</option>
+              <option value="HR">Human Resources</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+        </div>
+      
+        <!-- Number of Employees and Address -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Number of Employees</label>
+            <input type="number" placeholder="Enter number of employees" required />
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" placeholder="Enter address" required />
+          </div>
+        </div>
+      
+        <!-- Profile Image and Website URL -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Profile Image</label>
+            <input type="file" id="profileImage" accept="image/*" required />
+            <div id="imagePreview">Image Preview</div>
+          </div>
+          <div class="form-group">
+            <label>Website URL</label>
+            <input type="url" placeholder="Enter website URL" required />
+          </div>
+        </div>
+      
+        <!-- Business Registration Document -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Business Registration Document (PDF)</label>
+            <input type="file" id="registrationDoc" accept=".pdf" required />
+          </div>
+        </div>
+      
+        <!-- Submit Button -->
+        <div class="submit-btn">
+          <button type="button" id="submitBtn">Submit</button>
+        </div>
+      </form>
+      
+
+  <!-- JavaScript -->
+  <script>
+    // Form Elements
+// Form Elements
+// Form Elements
+const formElements = document.querySelectorAll("input, select");
+const submitEditBtn = document.getElementById("submitBtn");
+const requiredFields = document.querySelectorAll("input[required], select[required]");
+const fileInput = document.getElementById("registrationDoc");
+
+// Initial State
+let isEditMode = false;
+
+// Function to check if all required fields are filled
+function validateForm() {
+  for (let field of requiredFields) {
+    if (!field.value.trim()) {
+      return false; // If any field is empty
+    }
+  }
+  if (!fileInput.files.length) {
+    return false; // If no file is uploaded
+  }
+  return true; // All fields are filled
+}
+
+// Toggle Button Functionality
+submitEditBtn.addEventListener("click", () => {
+  if (!isEditMode) {
+    // Submit Mode: Validate form inputs
+    if (!validateForm()) {
+      alert("Please fill all required fields and upload the document before submitting.");
+      return;
+    }
+
+    // Disable inputs on successful validation
+    formElements.forEach((element) => {
+      element.disabled = true;
+    });
+    submitEditBtn.textContent = "Edit";
+    isEditMode = true;
+    alert("Details submitted successfully!");
+  } else {
+    // Edit Mode: Enable inputs
+    formElements.forEach((element) => {
+      element.disabled = false;
+    });
+    submitEditBtn.textContent = "Submit";
+    isEditMode = false;
+  }
+});
+
+// Image Preview
+document.getElementById("profileImage").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("imagePreview").style.backgroundImage = `url(${e.target.result})`;
+      document.getElementById("imagePreview").style.backgroundSize = "cover";
+      document.getElementById("imagePreview").textContent = "";
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+
+
+  </script>
+</body>
+{% endblock content %}

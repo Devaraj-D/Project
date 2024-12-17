@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block styles %}
+<style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .card img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 15px;
+        align-self: center;
+    }
+
+    .card h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.2em;
+    }
+
+    .card p {
+        margin: 5px 0;
+        font-size: 0.9em;
+    }
+
+    .view-details-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        margin-top: auto;
+        align-self: center;
+    }
+
+    .view-details-btn:hover {
+        background-color: #0056b3;
+    }
+    .navbar {
+            background-color: #007bff;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+</style>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar">
+    <a class="navbar-brand" href="#">TalentConnect</a>
+    <!-- <a href="#">Dashboard</a> -->
+    {% if subscription_status == "subscribed" %}
+    <!-- Display the 'Subscribed' button when the user is subscribed -->
+    <button class="btn btn-success" disabled>Subscribed</button>
+{% else %}
+    <!-- Display the 'Subscribe' button when the user is not subscribed -->
+    <a href="{{ url_for('subscribe') }}" class="btn btn-primary">Subscribe</a>
+{% endif %}
+
+    <a href="{{ url_for('logout') }}" class="btn btn-primary">Logout</a>
+
+
+</nav>
+<h2 style="text-align: center;">Available Internships</h2>
+<div class="card-container">
+    {% for company in companies %}
+    <div class="card">
+        {% if company.company_logo %}
+            <img src="{{ company.company_logo }}" alt="{{ company.company_name }} Logo">
+        {% else %}
+            <img src="{{ url_for('static', filename='images/default-logo.png') }}" alt="Default Logo">
+        {% endif %}
+<!--        <h3>{{ company.company_name }}</h3>-->
+        <p><strong>Internship:</strong> ${{ company.internship }}</p>
+        <p><strong>Duration:</strong> {{ company.duration }}</p>
+        <p><strong>Location:</strong> {{ company.location }}</p>
+        <a href="{{ url_for('details_page', company_id=company.id) }}" class="view-details-btn">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+</html>
