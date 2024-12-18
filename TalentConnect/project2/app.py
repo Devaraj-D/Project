@@ -113,6 +113,7 @@ def login():
 
         # Fetch the user from the database
         user = User.query.filter_by(email=email).first()
+        print(user)
         if not user or not check_password_hash(user.password, password):
             flash('Invalid email or password!', 'danger')
             return redirect(url_for('login'))
