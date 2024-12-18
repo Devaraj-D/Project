@@ -880,6 +880,9 @@ def view_resumes(application_id):
         print(f"Error serving file: {e}")
         flash('Error viewing resume.', 'danger')
         return redirect(url_for('admin_dashboard'))
+    
+
+    print("hii")
 
 @app.route('/index')
 def index():
