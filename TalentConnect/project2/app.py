@@ -899,6 +899,5 @@ def jobs():
 @app.route('/')
 def index1():
     return "Welcome! Visit /signup to register."
-print("vanakkam da mapla")
 if __name__ == '__main__':
     app.run(debug=True)
