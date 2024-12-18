@@ -1,7 +1,3 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,49 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='assests/log-back.jpeg') }}");
+            background-color: #f3f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevents scrolling */
+        }
+        
+     .login-container {
+        /* White with 80% opacity */
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #ffffff; /* Dark text color */
+}
+        .login-content {
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .login-container img.apple-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 50px; /* Adjust size of the logo */
+        }
+        .login-container img.happy-man {
+            position: fixed;
+            right: 20px;
+            width: 500px;
+            height: 500px; /* Adjust size of the image */
+        }
+        .login-container img.social-logo {
+            width: 20px; /* Adjust size of the social media logos */
+            height: 20px;
+            margin-right: 10px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            background-color: #47035a;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background-color: #e016ff;
+        }
+        .btn-outline-secondary {
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .text-small {
+            font-size: 14px;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h2 class="text-center mb-4">Login</h2>
+    <div class="login-container">
 
-                <!-- Flash Messages -->
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                                {{ message }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-
-                <!-- Login Form -->
-                <form action="/login" method="POST" class="shadow p-4 rounded bg-light">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
-                </form>
-
-                <!-- Additional Links -->
-                <div class="text-center mt-3">
-                    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
-                    <p><a href="/">Back to Home</a></p>
+        <div class="login-content">
+            <h2>Welcome back</h2>
+            <form action="/login" method="POST">
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@email.com" required>
                 </div>
+                <div class="mb-3 text-start">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="mb-3 text-end">
+                    <a href="/forgot-password" class="text-small">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="text-center mt-3">or</div>
+            <button class="btn btn-outline-secondary">
+                <img src="{{ url_for('static', filename='assests/google.png') }}" class="social-logo" alt="Google Logo"> Continue with Google
+            </button>
+            <button class="btn btn-outline-secondary">
+                <img src="{{ url_for('static', filename='assests/facebook.png') }}" class="social-logo" alt="Facebook Logo"> Continue with Facebook
+            </button>
+            <button class="btn btn-outline-secondary">
+                <img src="{{ url_for('static', filename='assests/apple-logo.png') }}" class="social-logo" alt="Apple Logo"> Continue with Apple
+            </button>
+            <div class="mt-3 text-small">
+                New here? <a href="/signup">Sign up</a>
             </div>
         </div>
+        
     </div>
-
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   
 </body>
 </html>
-{% endblock %}
