@@ -10,20 +10,17 @@
   <link rel="stylesheet" href="{% static 'job_portal/button.css' %}">
   <link rel="stylesheet" href="{% static 'job_portal/loader.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'job_portal/home.css' %}">
+  
 </head>
-<!--<div id="preloader">-->
-<!--<svg class="pl" width="240" height="240" viewBox="0 0 240 240">-->
-<!--	<circle class="pl__ring pl__ring&#45;&#45;a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>-->
-<!--	<circle class="pl__ring pl__ring&#45;&#45;b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>-->
-<!--	<circle class="pl__ring pl__ring&#45;&#45;c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>-->
-<!--	<circle class="pl__ring pl__ring&#45;&#45;d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>-->
-<!--</svg>-->
-<!--</div>-->
-<section >
-  <div class="navbar" >
-    <div class="brand" >
+
+
+
+<section>
+  <div class="navbar">
+    <div class="brand" style="color: purple;">
       <a class="navbar-brand" href="{% url 'index' %}">Talentconnect</a>
-      <a href="{% url 'intern' %}" class="nav-link">Internships</a>
+      <a href="{% url 'intern' %}" class="nav-link" >Internships</a>
       <a href="{% url 'subscribe' %}" class="nav-link">Subscription</a>
       <a href="{% url 'intern' %}" class="nav-link">Jobs</a>
     </div>
@@ -33,96 +30,139 @@
         <button type="submit" class="btn-search">Find Now</button>
       </form>
     </div>
-    <a href="{% url 'login' %}" style="margin-right=50;" class="btn-search">Login</a>
+    <!-- <a href="{% url 'login' %}" style="margin-right : 50px;" class="btn-search">Login</a> -->
   </div>
 </section>
 
-<section class="section-2" style="background-color: #ed4a69; background-size: cover; background-position: center; padding: 50px 0; height: 70%">
-  <div class="row-1">
+<!-- Background image added to this section -->
+{% load static %}
+<section
+  class="section-2"
+  style="
+     background-image: url('{% static 'images/ex.jpeg' %}');
+    /* background-size: cover; */
+    background-size:100% 100%;
+    background-position: center;
+    /* padding: 50px 0px; */
+    padding: 60px 0;
+    height: 450px; 
+    
+
+   
+  "
+>
+  <div class="row-1" style="color: white">
     <div class="col-2">
       <h1 style="font-family: 'Playfair Display', serif">Your Future Begins Here</h1>
       <p style="margin-top: 20px; font-size: 18px; line-height: 1.6; font-family: 'Playfair Display', serif">
-        We connect ambitious candidates with the right opportunities to learn, grow, and excel. Whether you're looking for internships, jobs, or certified courses, <strong>Talentconnect</strong> is your trusted career-building partner.
+        We connect ambitious candidates with the right opportunities to learn, grow, and excel. Whether you're looking for internships, jobs, or certified courses,
+        <strong>Talentconnect</strong> is your trusted career-building partner.
       </p>
-      <div class="button-container" style="margin-top: 40px;">
-        <button class="cand-sign-up" style="margin-right: 100px; background-color: #F0E6EF; color: black; font-family: 'Playfair Display', serif " onclick="window.location.href='{% url 'create_profile' %}'">
-          Get Started as a Candidate
+      <div style="margin-top: 30px">
+        <button onclick="window.location.href='{% url 'login' %}'"
+          style="
+            background-color: purple;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: 'Playfair Display', serif;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Login
         </button>
-        <button onclick="window.location.href='{% url 'create_profile' %}'" style="color: black; background-color: #F0E6EF; font-family: 'Playfair Display', serif " class="cand-sign-up">Get started as a Employer</button>
+        <button onclick="window.location.href='{% url 'create_profile' %}'"
+          style="
+            background-color: purple;
+            color: white;
+            padding: 10px 20px;
+            margin-left: 15px;
+            font-size: 16px;
+            font-family: 'Playfair Display', serif;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Signup
+        </button>
       </div>
     </div>
   </div>
 </section>
 
-<div class="why-talent-connect" style="background-color: #FFF0F5; padding: 30px; text-align: center;">
+
+
+<div class="why-talent-connect" style="padding: 30px; text-align: center;">
   <header class="section-header">
     <h2 style="color: black;">Why Choose Talent Connect?</h2>
     <p style="color: black;">Your ultimate partner in career success and talent acquisition.</p>
   </header>
 
-  <div class="features-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px; justify-content: center;">
-    <div class="feature" style="background-color: #D8E2DC; padding: 20px; border-radius: 10px; text-align: center; width: 80%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-      <div class="feature-icon" style="background-color: #FF69B4; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fas fa-link"></i>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="feature-icon"><i class="fas fa-link"></i></div>
+        <h3>Connecting Talent to Opportunities</h3>
+        <p> At <strong>Talent Connect</strong>, we bridge the gap between aspiring professionals and companies. Whether you're seeking a career, internship, or skilled candidates, we provide seamless solutions.</p>
       </div>
-      <h3 style="color: black;">Connecting Talent to Opportunities</h3>
-      <p style="color: black;">
-        At <strong>Talent Connect</strong>, we bridge the gap between aspiring professionals and companies. Whether you're seeking a career, internship, or skilled candidates, we provide seamless solutions.
-      </p>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+        <h3>A Platform for Growth and Success</h3>
+        <ul>
+          <li><strong>Extensive Listings:</strong> Verified jobs and internships across industries.</li>
+          <li><strong>Personalized Recommendations:</strong> Tailored opportunities based on your profile.</li>
+         <li><strong>Skill Enhancement:</strong> Certification programs for industry-relevant skills.</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Why Choose Jobs with Talent Connect?</h3>
+        <ul>
+          <li><strong>Curated Opportunities:</strong> Verified and diverse roles in IT, Marketing, and more.</li>
+          <li><strong>Trusted by Employers:</strong> Work with companies that value your skills.</li>
+          <li><strong>Career Resources:</strong> Resume building, interview prep, and counseling.</li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="feature-icon"><i class="fas fa-star"></i></div>
+        <h3>What Sets Us Apart?</h3>
+        <ul>
+          <li><strong>User-Friendly Platform:</strong> Easy navigation, instant applications.</li>
+          <li><strong>Verified Listings:</strong> Jobs reviewed for legitimacy and quality.</li>
+          <li><strong>For Employers:</strong> Simplify hiring with a pool of talented candidates.</li>
+          <li><strong>For Candidates:</strong> Track applications and grow your career confidently.</li>
+        </ul>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Placement Guarantee Programs</h3>
+        <p style="color: black;">Kickstart your career with our specialized courses:</p>
+       <ul style="color: black; text-align: left;">
+      <li>Full Stack Development</li>
+      <li>Data Science</li>
+      <li>Digital Marketing</li>
+      <li>Product Management</li>
+      <li>UI/UX Design</li>
+      <li>And more...</li>
+    </ul>
+      </div>
     </div>
 
-    <div class="feature" style="background-color: #D8E2DC; padding: 20px; border-radius: 10px; text-align: center; width: 80%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-      <div class="feature-icon" style="background-color: #FF69B4; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fas fa-rocket"></i>
-      </div>
-      <h3 style="color: black;">A Platform for Growth and Success</h3>
-      <ul style="color: black; text-align: left;">
-        <li><strong>Extensive Listings:</strong> Verified jobs and internships across industries.</li>
-        <li><strong>Personalized Recommendations:</strong> Tailored opportunities based on your profile.</li>
-        <li><strong>Skill Enhancement:</strong> Certification programs for industry-relevant skills.</li>
-      </ul>
-    </div>
-
-    <div class="feature" style="background-color: #D8E2DC; padding: 20px; border-radius: 10px; text-align: center; width: 80%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-      <div class="feature-icon" style="background-color: #FF69B4; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fas fa-briefcase"></i>
-      </div>
-      <h3 style="color: black;">Why Choose Jobs with Talent Connect?</h3>
-      <ul style="color: black; text-align: left;">
-        <li><strong>Curated Opportunities:</strong> Verified and diverse roles in IT, Marketing, and more.</li>
-        <li><strong>Trusted by Employers:</strong> Work with companies that value your skills.</li>
-        <li><strong>Career Resources:</strong> Resume building, interview prep, and counseling.</li>
-      </ul>
-    </div>
-
-    <div class="feature" style="background-color: #D8E2DC; padding: 20px; border-radius: 10px; text-align: center; width: 80%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-      <div class="feature-icon" style="background-color: #FF69B4; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fas fa-star"></i>
-      </div>
-      <h3 style="color: black;">What Sets Talent Connect Apart?</h3>
-      <ul style="color: black; text-align: left;">
-        <li><strong>User-Friendly Platform:</strong> Easy navigation, instant applications.</li>
-        <li><strong>Verified Listings:</strong> Jobs reviewed for legitimacy and quality.</li>
-        <li><strong>For Employers:</strong> Simplify hiring with a pool of talented candidates.</li>
-        <li><strong>For Candidates:</strong> Track applications and grow your career confidently.</li>
-      </ul>
-    </div>
-
-    <div class="feature" style="background-color: #D8E2DC; padding: 20px; border-radius: 10px; text-align: center; width: 80%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-      <div class="feature-icon" style="background-color: #FF69B4; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fas fa-graduation-cap"></i>
-      </div>
-      <h3 style="color: black;">Placement Guarantee Programs</h3>
-      <p style="color: black;">Kickstart your career with our specialized courses:</p>
-      <ul style="color: black; text-align: left;">
-        <li>Full Stack Development</li>
-        <li>Data Science</li>
-        <li>Digital Marketing</li>
-        <li>Product Management</li>
-        <li>UI/UX Design</li>
-        <li>And more...</li>
-      </ul>
-    </div>
+    <!-- Navigation Buttons -->
+    <button class="scroll-btn left-btn"><i class="fas fa-chevron-left"></i></button>
+    <button class="scroll-btn right-btn"><i class="fas fa-chevron-right"></i></button>
   </div>
 </div>
 
@@ -130,11 +170,11 @@
 <div class="call-to-action" style="text-align: center; padding: 30px; background-color: #FFFFFF;">
   <h3 style="color: black;">Ready to Take the Next Step?</h3>
   <p style="color: black;">
-    - Sign up as a <strong><a href="{% url 'create_profile' %}" style="color: #FF69B4;">Candidate</a></strong> to discover jobs and internships. <br>
-    - Register as an <strong><a href="{% url 'create_profile' %}" style="color: #FF69B4;">Employer</a></strong> to hire top talent. <br>
+    - Sign up as a <strong><a href="{% url 'create_profile' %}" style="color: #391b49;">Candidate</a></strong> to discover jobs and internships. <br>
+    - Register as an <strong><a href="{% url 'create_profile' %}" style="color: #391b49;">Employer</a></strong> to hire top talent. <br>
     - Explore our <strong>Courses</strong> to boost your skills and career growth.
   </p>
-  <a href="#" class="cta-button" style="padding: 10px 20px; background-color: #FF69B4; color: white; border-radius: 5px; text-decoration: none;">Get Started</a>
+  <a href="{% url 'create_profile' %}" class="cta-button" style="padding: 10px 20px; background-color: #391b49; color: white; border-radius: 5px; text-decoration: none;">Get Started</a>
 </div>
 
 <footer>
@@ -157,6 +197,7 @@
 
   <p>Connecting Talent, Building Futures &copy; 2024 Talentconnect</p>
 </footer>
+
 <script>
     window.addEventListener("load", function () {
         const preloader = document.getElementById("preloader");
@@ -164,6 +205,26 @@
         preloader.style.visibility = "hidden";
         preloader.style.transition = "opacity 2s, visibility 2s";
     });
+</script>
+
+<script>
+const track = document.querySelector('.carousel-track');
+const leftBtn = document.querySelector('.left-btn');
+const rightBtn = document.querySelector('.right-btn');
+
+let currentPosition = 0;
+const cardWidth = 320; // Approximate width of each card including gap
+
+rightBtn.addEventListener('click', () => {
+  const maxScroll = track.scrollWidth - track.clientWidth;
+  currentPosition = Math.min(currentPosition + cardWidth * 3, maxScroll);
+  track.style.transform = `translateX(-${currentPosition}px)`;
+});
+
+leftBtn.addEventListener('click', () => {
+  currentPosition = Math.max(currentPosition - cardWidth * 3, 0);
+  track.style.transform = `translateX(-${currentPosition}px)`;
+});
 </script>
 
 {% endblock content %}

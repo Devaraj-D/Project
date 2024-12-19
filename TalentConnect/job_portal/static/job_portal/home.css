@@ -1,0 +1,112 @@
+/* General Styling */
+body {
+    /* background-image: url("{{ url_for('static', filename='images/1.jpg') }}"); */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background-color: #0957a5; */
+    
+    
+  }
+
+  .navbar:hover{
+    color:#935D9E
+  }
+  
+  .why-talent-connect {
+    padding: 40px;
+    text-align: center;
+    background-color: #935D9E;
+    
+  }
+  
+  .section-header h2 {
+    color: black;
+    margin: 0;
+    margin-top: 15px;
+  }
+  
+  .section-header p {
+    color: black;
+    margin: 10px 0 30px;
+  }
+  
+  /* Carousel Styling */
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom:50px;
+    padding-top:30px;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .card {
+    min-width: 250px;
+    background-color: #d8e2dc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    padding-right:60px;
+    text-align: center;
+  }
+  
+  .feature-icon {
+    background-color: #391b49;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 10px;
+  }
+  
+  .card h3 {
+    margin: 10px 0;
+    color: black;
+  }
+  
+  .card p,
+  .card ul {
+    color: black;
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  
+  
+  .left-btn {
+    left: 10px;
+  }
+  
+  .right-btn {
+    right: 10px;
+  }
+  
+  .scroll-btn{
+    margin-top: 20px;
+  }
+  .scroll-btn:hover {
+    background-color: #391b49;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .carousel-track {
+      gap: 20px;
+    }
+  
+    .card {
+      min-width: 270px;
+    }
+  }
+  
+  
