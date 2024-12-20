@@ -19,8 +19,11 @@ from django.contrib import admin
 from job_portal.views import  Index
 from django.conf import settings
 from django.conf.urls.static import static
-from job_portal.views import candidate_registration, internship, profile_success, login_view, login_success, subscription, posts, index1, index2
+from job_portal.views import candidate_registration, internship, profile_success, login_view, login_success, subscription, posts, index1, index2,custom_logout
 from internship.views import student_form, organization_form_view
+from django.contrib.auth.views import LogoutView
+
+
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
@@ -39,6 +42,7 @@ urlpatterns = [
     path('post/', posts, name='post'),
     path('profile/', student_form, name='profile'),
     path('employer/', organization_form_view, name='employer'),
+    path('logout/', custom_logout, name='logout'),
 ]
 
 if settings.DEBUG:

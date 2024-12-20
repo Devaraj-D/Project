@@ -78,10 +78,10 @@ def signup():
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
-        confirm_password=request.form.get('confirm_password')
+        confirm_password = request.form.get('confirm_password')
 
-        if password !=confirm_password:
-            flash('password and confirm password do not match','danger')
+        if password != confirm_password:
+            flash('Password and confirm password do not match', 'danger')
             return redirect(url_for('signup'))
 
         # Check if email is already registered
@@ -94,15 +94,36 @@ def signup():
         hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
         # Add new user to the database
-        new_user = User(role=role,username=username, email=email, password=hashed_password)
+        new_user = User(role=role, username=username, email=email, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
 
-        flash('Signup successful! You can now log in.', 'success')
-        return redirect(url_for('login'))
+        flash('Signup successful!', 'success')
+
+        # Use new_user instead of undefined user
+        # Generate tokens
+        access_token, refresh_token, id_token = generate_tokens(new_user.id)
+
+        # Save tokens in session (optional for server-side usage)
+        session['access_token'] = access_token
+        session['user_id'] = new_user.id
+        session['refresh_token'] = refresh_token
+        session['user_email'] = new_user.email
+        session['id_token'] = id_token
+        session['username'] = new_user.username
+
+        # Redirect based on role
+        if role == 'student':
+            flash('Login successful! Redirecting to student dashboard.', 'success')
+            return redirect(f'http://127.0.0.1:8000/index1?username={new_user.username}&role=student')
+        elif role == 'company':
+            flash('Login successful! Redirecting to company dashboard.', 'success')
+            return redirect(f'http://127.0.0.1:8000/index2?username={new_user.username}&role=employer')
+        else:
+            flash('Invalid role! Please contact support.', 'danger')
+            return redirect(url_for('signup'))
 
     return render_template('signup.html')
-
 
 # Login Route
 @app.route('/login', methods=['GET', 'POST'])

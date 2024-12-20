@@ -9,7 +9,9 @@ from django.http import HttpResponseRedirect
 # from .forms import StudentProfileForm, CompanyProfileForm
 from django.urls import reverse
 import requests
+from django.urls import path
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LogoutView
 
 
 def internship(request):
@@ -35,6 +37,10 @@ def login_view(request):
 def profile(request):
     return render(request, 'job_portal/profile1.html')
 
+def custom_logout(request):
+    logout(request)
+    return redirect('/')  # Redirect to home or another page
+
 # def job(request):
 #     return  HttpResponseRedirect('http://127.0.0.1:5000/dashboard')
 #
@@ -52,6 +58,10 @@ def login_success(request):
 
 def subscription(request):
     return HttpResponseRedirect('http://127.0.0.1:5000/subscribe')
+
+
+
+
 
 # def candidate_registration(request):
 #     if request.method == 'POST':
