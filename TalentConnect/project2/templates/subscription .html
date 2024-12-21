@@ -7,27 +7,51 @@
   <link rel="stylesheet" href="static/css/subscription.css">
   <link rel="stylesheet" href="static/css/header.css">
   <script src="https://js.stripe.com/v3/"></script>
+  <style>
+     body {
+      background: linear-gradient(to bottom, #391B48, #C29CE5);
+      color: #FFFFFF;
+      font-family: Arial, sans-serif;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    
+      /* justify-content: space-between; */
+      padding: 5px;
+      /* padding-left: 200px; */
+      padding-right: 600px;
+      
+    }
+
+    .nav-links a {
+      /* margin-right: 30px; */
+      text-decoration: none;
+      color: #53175f;
+      font-size: bold;
+      font-weight: bold;
+      
+      justify-content: space-between;
+    }
+    .card-content{
+      color: white;
+    }
+  
+  </style>
 </head>
 <body>
   <div class="signup-container">
     <header class="header-wrapper">
       
-        <div class="brand-logo">TalentConnect</div>
+        <div class="brand-logo" style="color: #391B48;">TalentConnect</div>
         <nav class="nav-links">
+          <nav class="nav-links" style="color: #391B48; justify-content: space-between; padding-right: 100px;">
+            <a href="#" style="padding-right: 100px;">Home</a>
+            <a href="#" style="padding-right: 100px;">Benifits</a>
+            <a href="#" style="padding-right: 100px;">Contact</a>
+          </nav>
         
       </nav>
-      <div class="user-profile">
-        <img src="/static/assests/profile-placeholder.png" alt="User Profile" class="profile-icon" />
-      </div>
-   <!--  <div class="search-section">
-        <div class="search-bar" role="search">
-          <div class="search-input-wrapper">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/728315a4dee7886052f73849805a080167688f2df94a767b1b67861977e91d84?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="" class="search-icon" />
-            <input type="search" class="search-input" placeholder="Search" aria-label="Search" />
-          </div>
-        </div>
-        <a href="sign.html" class="login-button">Login</a>
-      </div>--> 
     </header>
     </div>
 
@@ -37,7 +61,7 @@
     <div class="plansection" >
     <section class="hero" >
       <h2>Now save BIG on your hiring budget</h2>
-      <h1 class="highlight">Post unlimited premium internships and jobs</h1>
+      <h1 class="highlight" style="color: gold;">Post unlimited premium internships and jobs</h1>
     </section>
 
     <section class="plans">
@@ -45,16 +69,16 @@
         <div class="card">
             <div class="content-box">
                 <span class="card-title">1 Month Plan.</span>
-                <p class="card-content">
+                <p class="card-content" style="color: #FFFFFF;">
                   Save 20% + 25%   
                 </p>
-                <p class="card-content">
+                <p class="card-content" style="color: #FFFFFF;">
                   First time user discount   
                 </p>
-                <button id="checkout-button-yearly" class="Buy">Buy</button>
+                <button id="checkout-button-yearly" class="Buy" style="background-color: #391B48;">Buy</button>
             </div>
             <div class="date-box">
-                <span class="month">popular</span>
+                <span class="month" style="color: #a41ebe;" >popular</span>
                 <span class="strike">₹1,000</span>
             </div>
         </div>
@@ -63,22 +87,21 @@
         <div class="card">
             <div class="content-box">
                 <span class="card-title">1 year plan.</span>
-                <p class="card-content">
+                <p class="card-content" style="color: #FFFFFF;">
                   Save 20% + 25%   
                 </p>
-                <p class="card-content">
+                <p class="card-content" style="color: #FFFFFF;">
                   Exclusive offer For a year ...  
                 </p>
-                <button id="checkout-button-monthly" class="Buy">Buy</button>
+                <button id="checkout-button-monthly" class="Buy" style="background-color:#391B48">Buy</button>
             </div>
             <div class="date-box">
-                <span class="month">popular</span>
+                <span class="month" style="color: #a41ebe;">popular</span>
                 <span class="strike">₹10,000</span>
             </div>
         </div>
       </div>
     </section>
-
     <div class="separator">OR</div>
 
     <section class="custom-plan">
@@ -88,14 +111,14 @@
     </section>
 
     <section class="contact">
-      <p>Reach out to us on <a href="tel:+911234567890">+91 75503 44823</a> or <a href="mailto:TalentConnect@gmail.com">TalentConnect@gmail.com</a> for more details.</p>
+      <p>Reach out to us on <a href="tel:+911234567890" style="color:#391B48;">+91 75503 44823</a> or <a href="mailto:TalentConnect@gmail.com" style="color:#391B48;">TalentConnect@gmail.com</a> for more details.</p>
     </section>
     </div>
-    <section class="benefits">
-      <h3>Now enjoy premium benefits for all your internships and jobs</h3>
+    <section class="benefits" style="box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;">
+      <h3 style="color: gold;">Now enjoy premium benefits for all your internships and jobs</h3>
       <table>
-        <thead>
-          <tr>
+        <thead style="background-color: #391B48;">
+          <tr style="background-color: #391B48;">
             <th>Benefits</th>
             <th>Free</th>
             <th>Premium</th>
@@ -135,7 +158,7 @@
         </tbody>
       </table>
     </section>
-    <p>For any queries, reach out to us at <a href="tel:+911234567890">+91 12345 67890</a> or <a href="mailto:talentconnect@gmail.com">TalentConnect@gmail.com</a>, available from Mon-Fri, 9:30 AM to 6:30 PM.</p>
+    <p>For any queries, reach out to us at <a href="tel:+911234567890" style="color:#391B48;" >+91 12345 67890</a> or <a href="mailto:talentconnect@gmail.com" style="color:#391B48;">TalentConnect@gmail.com</a>, available from Mon-Fri, 9:30 AM to 6:30 PM.</p>
 
   </div>
 
@@ -159,8 +182,8 @@
         </div>
       </div>
   
-      <div class="footer-col">
-        <nav class="footer-links">
+      <div class="footer-col" style="color: white;">
+        <nav class="footer-links" style="color: white;">
           <a href="#" class="footer-link">About us</a>
           <a href="#" class="footer-link">Careers</a>
           <a href="#" class="footer-link">Employer home</a>
@@ -186,36 +209,7 @@
           <a href="#" class="footer-link">Trust & safety</a>
         </nav>
       </div>
-  
-      <div class="footer-col">
-        <!--<div class="app-download">
-          <h2 class="app-title">Apply on the go</h2>
-          <p class="app-subtitle">Get real-time job updates on our App</p>
-          <div class="app-buttons">
-            <a href="#" class="app-button">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ca7cf4af68dc89d0c5125d82a00beb4788699837f04973f52367dc0e0d7bcb3?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="Download on the App Store" />
-            </a>
-            <a href="#" class="app-button">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cca337ab1a1c846868bba1ad0a41c10da8c4fd106c21b3ad2fe20201548b453a?placeholderIfAbsent=true&apiKey=2d28e4b764c848efbad75113e229234a" alt="Get it on Google Play" />
-            </a>
-          </div>
-        </div>-->
-      
-  
-      <div class="app-section">
-        <div class="app-container">
-          <h2 class="app-title">Apply on the go</h2>
-          <p class="app-description">Get real-time job updates on our App</p>
-          <div class="app-links">
-            <a href="#" class="store-link">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fda117ab2d9f4db64d0fddd63aabb7f15cd1220738ad54f2135600bf4bdb94f3?placeholderIfAbsent=true&apiKey=3cc6d83a49d44ee886ecb5b07ba31135" alt="Download on the App Store" class="store-image" />
-            </a>
-            <a href="#" class="store-link">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/aaeb53d894d491ee83f3397a8a8cabf2fc3901c394e86867e5e85b91f537922f?placeholderIfAbsent=true&apiKey=3cc6d83a49d44ee886ecb5b07ba31135" alt="Get it on Google Play" class="store-image" />
-            </a>
-          </div>
-        </div>
-      </div>
+
     </div>
     </div>
   </footer>
@@ -255,6 +249,25 @@
       alert(result.error.message);
     }
   });
+  // Add event listeners to navigation links
+  document.querySelector("a[href='#']").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "http://127.0.0.1:8000/";
+  });
+
+  document.querySelectorAll("a[href='#']")[1].addEventListener("click", (e) => {
+    e.preventDefault();
+    const benefitsSection = document.querySelector(".benefits");
+    benefitsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.querySelectorAll("a[href='#']")[2].addEventListener("click", (e) => {
+    e.preventDefault();
+    const footerSection = document.querySelector(".footer");
+    footerSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+
 
   </script>
 

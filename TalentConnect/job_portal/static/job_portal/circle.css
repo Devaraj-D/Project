@@ -1,0 +1,257 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    color: var(--dark-purple);
+    margin-bottom: 20px;
+  }
+
+  .process-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+  }
+  .step-icon {
+    width: 120px;
+    height: 120px;
+    background-color: #e8f4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+
+  .step-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #c29ce5;
+    animation: ripple 2s infinite;
+    opacity: 0;
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 #c29ce5;
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px rgba(0, 153, 255, 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 153, 255, 0);
+    }
+  }
+
+  .step-icon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .step-icon img {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+  }
+
+  .step h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .step p {
+    color: #666;
+    font-size: 14px;
+    max-width: 250px;
+    line-height: 1.5;
+  }
+
+  /* New connecting lines styling */
+  .process-flow::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%,
+      #c29ce5 15%,
+      #c29ce5 85%,
+      transparent 100%
+    );
+    z-index: 1;
+  }
+
+  /* Animated dots on the line */
+  .process-flow::after {
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #391b49;
+    border-radius: 50%;
+    animation: moveDot 3s linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes moveDot {
+    0% {
+      left: 15%;
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      left: 85%;
+      opacity: 0;
+    }
+  }
+
+  .bottom-header {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .bottom-header h2 {
+    font-size: 28px;
+    color: #333;
+  }
+
+  /* Make it responsive */
+  @media (max-width: 768px) {
+    
+  }
+
+  //box content with image
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .column {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .column:hover {
+      transform: translateY(-5px);
+    }
+
+    .column img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .column h3 {
+      padding: 15px;
+      font-size: 16px;
+      color: #333;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Tablet Breakpoint */
+    @media (max-width: 992px) {
+      .content {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+      }
+
+      .column img {
+        height: 180px;
+      }
+    }
+
+    /* Mobile Breakpoint */
+    @media (max-width: 576px) {
+      .content {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+
+      .column {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .column img {
+        height: 160px;
+      }
+
+      .column h3 {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
